@@ -68,7 +68,7 @@ create::create (char* Arr)
 							Temp->key[0].calc = new unsigned int[sizeof(unsigned int)];
 								Temp->key[0].Array[0] = Arr[q];  
 								Temp->key[0].calc[0] = 1;
-						Temp->next = NULL;		//пока нет следующего элемента
+						Temp->next = NULL;		
 					End = Temp->prev;
 	}
 	Temp = Begin;
@@ -76,9 +76,9 @@ create::create (char* Arr)
 
 create::~create() 
 {
-	delete[]Begin;			//Указатель на первый элемент
+	delete[]Begin;			
 	delete[]Temp;	
-	delete[]End;				//Указатель на посдедний эленмент
+	delete[]End;				
 } 	
 
 void create::ShowLoadData()
