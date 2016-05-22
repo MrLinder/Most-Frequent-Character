@@ -46,31 +46,26 @@ create::create (char* Arr)
 	
 	Begin = Temp = End = new List();		
 	
-		Temp->key = new Data[1];
-			Temp->key[0].Array = new char();
-			Temp->key[0].calc = new unsigned int();
-				Temp->key[0].Array[0] =  Arr[0];
-				Temp->key[0].calc[0] = 1;
-			Temp -> prev = NULL;
-		Temp -> next = NULL;
-	Begin = Temp;
-	End = Temp;
-		
+	Temp->key = new Data[1];
+		Temp->key[0].Array = new char();
+		Temp->key[0].calc = new unsigned int();
+			Temp->key[0].calc[0] = 1;
+			Temp->key[0].Array[0] =  Arr[0];
+	Begin = End = Temp;
+	
 	for ( int q = 1; q < NumSourceItems; ++q) 
 	{
 		Temp -> next = new List();
 		
-			List* elem = Temp;						
-				Temp = Temp->next;						
-					Temp->prev = elem;	 
-				
-						Temp->key = new Data[1];
-							Temp->key[0].Array = new char();
-							Temp->key[0].calc = new unsigned int();
-								Temp->key[0].Array[0] = Arr[q];  
-								Temp->key[0].calc[0] = 1;
-						Temp->next = NULL;		
-					End = Temp->prev;
+		List* elem = Temp;						
+			Temp = Temp->next;						
+				Temp->prev = elem;	 
+				Temp->key = new Data[1];
+					Temp->key[0].calc = new unsigned int();
+					Temp->key[0].Array = new char();
+						Temp->key[0].Array[0] = Arr[q];  
+						Temp->key[0].calc[0] = 1;
+				End = Temp->prev;
 	}
 	Temp = Begin;
 }
