@@ -35,6 +35,8 @@ public:
 
 create::create (char* Arr) 
 {
+	// TODO: crach if in array add \0 fix it 
+	
 	one_run = 0;
 	NumSourceItems = strlen(Arr)+1;
 		SourceArray = new unsigned char[NumSourceItems];
@@ -43,11 +45,10 @@ create::create (char* Arr)
 			SourceArray[NumSourceItems] = '\0';
 	
 	Begin = Temp = End = new List();		
-
-	Temp = new List();
+	
 		Temp->key = new Data[1];
-			Temp->key[0].Array = new char[sizeof(char)];
-			Temp->key[0].calc = new unsigned int[sizeof(unsigned int)];
+			Temp->key[0].Array = new char();
+			Temp->key[0].calc = new unsigned int();
 				Temp->key[0].Array[0] =  Arr[0];
 				Temp->key[0].calc[0] = 1;
 			Temp -> prev = NULL;
@@ -64,8 +65,8 @@ create::create (char* Arr)
 					Temp->prev = elem;	 
 				
 						Temp->key = new Data[1];
-							Temp->key[0].Array = new char[sizeof(char)];
-							Temp->key[0].calc = new unsigned int[sizeof(unsigned int)];
+							Temp->key[0].Array = new char();
+							Temp->key[0].calc = new unsigned int();
 								Temp->key[0].Array[0] = Arr[q];  
 								Temp->key[0].calc[0] = 1;
 						Temp->next = NULL;		
@@ -155,6 +156,8 @@ char create::GetMostFrequentCharacter()
 		SearCh = SearCh->next;
 	}
 	return *returnCh;
+	
+	//TODO: mostFrequentCharacter(char* str, int size);
 }
 
 int main()
