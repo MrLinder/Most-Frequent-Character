@@ -1,4 +1,5 @@
 
-public class Analize {
+public final class Analize {
+	
 
 }
