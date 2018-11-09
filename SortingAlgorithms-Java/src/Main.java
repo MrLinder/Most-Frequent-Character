@@ -1,30 +1,27 @@
 import java.util.Random;
 
-public class Main{
+public class Main {
 	
 	public static int[] array;
 		
 	public Main() {
 			
 		System.out.println("Source Array:"); 
+		
 		array = getRandomArray(100);
+		
 		printArray();		
 		
 		Sorting sorting = new Sorting(array, "Selection Sorting");
 				sorting.start();
 		
-				try {
-					sorting.join();
-				} catch (InterruptedException e) {
-					e.getStackTrace();
-				}
-				
-				
+		try {
+			sorting.join();
+		} catch (Exception e) {
+			e.getMessage();
+		}			
 		
 		printArray(checkSequence(sorting.getArray()));
-		
-		
-		
 		printArray(sorting.getArray());
 		
 		
@@ -36,15 +33,13 @@ public class Main{
 	
 	
 	public boolean checkSequence(int[] arr) {
-		
-		for (int i : arr) {
-			if(i > i+1)
+		for (int i = 1; i < arr.length; i++) {
+			if(arr[i-1] > arr[i])
 				return false;
 		}
 		return true;
 	}
-	
-	
+
 	public int[] getRandomArray(int size) {
 		Random rand = new Random();
 		

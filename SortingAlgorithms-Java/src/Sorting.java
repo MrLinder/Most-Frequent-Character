@@ -12,6 +12,7 @@ public class Sorting extends Thread{
 		for (int i = 0; i < size; i++) {
 			this.array[i] =  arr[i];
 		}
+		System.out.print("\t" + this.name + ":\t");
 	}
 	
 	@Override
@@ -33,7 +34,6 @@ public class Sorting extends Thread{
 	
 	
 	public int[] getArray() {
-		System.out.println(this.name);
 		return this.array;
 	}
 	
