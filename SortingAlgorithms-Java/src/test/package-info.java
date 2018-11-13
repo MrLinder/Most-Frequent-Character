@@ -1,5 +1,0 @@
-/**
- * @author LindXdeep
- *
- */
-package test;
